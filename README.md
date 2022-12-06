@@ -308,7 +308,7 @@ Det er andre utfordringer med denne flyten også; Workflowen kjører "ok" selv o
 Branch protection og status sjekker - Beskriv hva sensor må gjøre for å konfigurere sin fork på en slik måte
 at
 
-*[x] Ingen kan pushe kode direkte på main branch
+*[ ] Ingen kan pushe kode direkte på main branch
 *[ ] Kode kan merges til main branch ved å lage en Pull request med minst en godkjenning
 *[ ] Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
 
