@@ -299,8 +299,8 @@ ha et valg som heter "Run workflow"
 
 Det er andre utfordringer med denne flyten også; Workflowen kjører "ok" selv om det åpenbart er unit-testfeil i koden. 
 
-*[ ] Få først ```ci.yml```workflow til å feile fordi enhetstesten feiler. 
-*[ ] Rett deretter enhetstesten og se at pipeline kjører "ok".  
+*[x] Få først ```ci.yml```workflow til å feile fordi enhetstesten feiler. 
+*[x] Rett deretter enhetstesten og se at pipeline kjører "ok".  
 *[ ] Workflowen skal kompilere javakoden og kjøre enhetstester på hver eneste push, *uavhengig av branch* 
 
 ### Oppgave 3 
