@@ -9,7 +9,6 @@ on:
       - 'master'
     pull_request:
       types: [opened, reopened]
-
 jobs:
   build:
     runs-on: ubuntu-latest
