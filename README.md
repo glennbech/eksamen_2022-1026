@@ -320,7 +320,7 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 
 ### Oppgave 1
 
-*[ ] Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
+*[x] Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
 
 ### Oppgave 2
 
