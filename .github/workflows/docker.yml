@@ -1,10 +1,10 @@
-# Jim; I'm giving up on this docker thing. It just fails ,and I've spent about six weeks on this...
+## Jim; I'm giving up on this docker thing. It just fails ,and I've spent about six weeks on this...
 name: Docker build
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
 jobs:
   build:
     runs-on: ubuntu-latest
