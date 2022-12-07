@@ -324,7 +324,7 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 
 ### Oppgave 2
 
-*[ ] Når du har fikset problemet i oppgave 1, og du forøker å kjøre applikasjonen fra Docker hub med for eksempel; 
+*[x] Når du har fikset problemet i oppgave 1, og du forøker å kjøre applikasjonen fra Docker hub med for eksempel; 
 ```docker run <dockerhub brukeravn>/shopifly```
 
 Får du en feilmelding 
