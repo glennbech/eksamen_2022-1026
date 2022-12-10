@@ -21,8 +21,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 
-#        run: |
-#          aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
+        run: |
+          aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
 #          rev=$(git rev-parse --short HEAD)
 ##          docker build . -t hello
 #          docker tag hello 244530008913.dkr.ecr.eu-west-1.amazonaws.com/daaa005:$rev
