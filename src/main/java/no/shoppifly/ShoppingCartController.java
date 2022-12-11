@@ -16,7 +16,13 @@ import java.util.Map;
 @RestController()
 public class ShoppingCartController implements ApplicationListener<ApplicationReadyEvent> {
 
-    private Map<String, Cart> theCart = new HashMap<>();
+//    @Autowired
+//    private Map<String, Cart> theCart = new HashMap<>();
+
+    @Autowired
+    private NaiveCartImpl naiveCart;
+
+    @Autowired
     private MeterRegistry meterRegistry;
     @Autowired
     private final CartService cartService;
@@ -66,7 +72,7 @@ public class ShoppingCartController implements ApplicationListener<ApplicationRe
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        Gauge.builder("cart_count", theCart,
+        Gauge.builder("cart_count", naiveCart.shoppingCarts,
                 b -> b.values().size()).register(meterRegistry);
     }
 
