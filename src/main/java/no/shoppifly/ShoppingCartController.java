@@ -1,5 +1,8 @@
 package no.shoppifly;
 
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.instrument.Meter;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,15 +11,18 @@ import java.util.List;
 @RestController()
 public class ShoppingCartController {
 
+    private MeterRegistry meterRegistry;
     @Autowired
     private final CartService cartService;
 
-    public ShoppingCartController(CartService cartService) {
+    public ShoppingCartController(MeterRegistry meterRegistry, CartService cartService) {
+        this.meterRegistry = meterRegistry;
         this.cartService = cartService;
     }
-
+    @Timed
     @GetMapping(path = "/cart/{id}")
     public Cart getCart(@PathVariable String id) {
+        meterRegistry.counter("carts").increment();
         return cartService.getCart(id);
     }
 
