@@ -23,6 +23,7 @@ jobs:
         run: |
           aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
           rev=$(git rev-parse --short HEAD)
+          ecrRepoName=$(1026)
           docker build . -t $rev
-          docker tag $rev 244530008913.dkr.ecr.eu-west-1.amazonaws.com/1026:$rev
-          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/1026:$rev
+          docker tag $rev 244530008913.dkr.ecr.eu-west-1.amazonaws.com/$ecrRepoName:$rev
+          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/$ecrRepoName:$rev
