@@ -360,10 +360,10 @@ Vi kan få bedre kontroll på byggeprosessen ved også å gjøre maven bygget i 
 Gaffel consulting var ikke klar over at det var en dårlig idè å ha sitt container image i et offentlig Docker hub repository - og Shopifly har allerede sett at flere hundre har lastet ned deres container image.
 Et privat ECR repository i AWS er en bedre løsning.
 
-*[ ] Lag dit eget ECR repository med kandidatnummer som navn, enten ved hjelp av UI - eller ved hjelp av CLI.
-*[ ] Endre ```docker.yml```, workflow til å pushe docker container til Amazon ECR, istedet for docker hub
-*[ ] Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.
-*[ ] Docker workflow skal pushe et container image med en tag som er lik GitHub commit hash (id); for eksempel ```244530008913.dkr.ecr.eu-west-1.amazonaws.com/glenn_exam_practice:8234efc```
+*[x] Lag dit eget ECR repository med kandidatnummer som navn, enten ved hjelp av UI - eller ved hjelp av CLI.
+*[x] Endre ```docker.yml```, workflow til å pushe docker container til Amazon ECR, istedet for docker hub
+*[x] Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.
+*[x] Docker workflow skal pushe et container image med en tag som er lik GitHub commit hash (id); for eksempel ```244530008913.dkr.ecr.eu-west-1.amazonaws.com/glenn_exam_practice:8234efc```
 
 ## Del 4 - Metrics, overvåkning og alarmer
 
@@ -373,7 +373,7 @@ Cloud9 er ikke verdens beste IDE. Det anbefales å gjøre den følgende oppgaven
 
 ### Oppgave 1
 
-*[ ] Gjør nødvendige endringer i ```pom.xml``` - og koden, slik at applikasjonen kan levere Metrics til CloudWatch ved hjelp av Spring Boot Micrometer.
+*[x] Gjør nødvendige endringer i ```pom.xml``` - og koden, slik at applikasjonen kan levere Metrics til CloudWatch ved hjelp av Spring Boot Micrometer.
 Konfigurer applikasjonen til å bruke ditt eget ClodWatch Metrics Namespace - ditt Kandidatnummer. 
 
 *OBS!* Når dere innfører Micrometer i koden deres, vil enhetstesten slutte å fungere. Dere får lov til å slette 
