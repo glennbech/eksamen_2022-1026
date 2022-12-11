@@ -6,7 +6,8 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
-  build:
+  push_to_registry:
+    name: Push Image to ECR
     runs-on: ubuntu-latest
     steps:
       -
@@ -15,7 +16,7 @@ jobs:
 
 
       -
-        name: Login
+        name: Build, login and push image
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
