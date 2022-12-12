@@ -32,4 +32,4 @@ jobs:
         continue-on-error: false
 
       - name: Terraform Apply
-        run: terraform apply -var -auto-approve
+        run: terraform apply -var="candidate_id=$CANDIDATE_ID" -var="candidate_email=$CANDIDATE_EMAIL" -auto-approve
