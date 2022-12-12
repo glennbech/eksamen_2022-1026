@@ -5,10 +5,10 @@ terraform {
       version = "4.40.0"
     }
   }
-  backend "s3" {
-    bucket = "1026-terraform-state"
-    key = "1026/eksamen.state"
-    region = "eu-north-1"
-  }
+#  backend "s3" {
+#    bucket = "1026-terraform-state"
+#    key = "1026/eksamen.state"
+#    region = "eu-north-1"
+#  }
 
 }
