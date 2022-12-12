@@ -37,7 +37,7 @@ class NaiveCartImpl implements CartService, ApplicationListener<ApplicationReady
 
     @Override
     public String checkout(Cart cart) {
-        meterRegistry.counter("checkouts_sum").increment();
+        meterRegistry.counter("checkouts").increment();
         shoppingCarts.remove(cart.getId());
         return UUID.randomUUID().toString();
     }
