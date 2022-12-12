@@ -1,13 +1,25 @@
 package no.shoppifly;
 
+import io.micrometer.core.instrument.Gauge;
+import io.micrometer.core.instrument.MeterRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 @Component
-class NaiveCartImpl implements CartService {
+class NaiveCartImpl implements CartService, ApplicationListener<ApplicationReadyEvent> {
 
-    public final Map<String, Cart> shoppingCarts = new HashMap<>();
+    private final Map<String, Cart> shoppingCarts = new HashMap<>();
+
+    private final MeterRegistry meterRegistry;
+
+    @Autowired
+    public NaiveCartImpl(MeterRegistry meterRegistry) {
+        this.meterRegistry = meterRegistry;
+    }
 
     @Override
     public Cart getCart(String id) {
@@ -26,6 +38,7 @@ class NaiveCartImpl implements CartService {
     @Override
     public String checkout(Cart cart) {
         shoppingCarts.remove(cart.getId());
+        meterRegistry.counter("checkouts_sum").increment();
         return UUID.randomUUID().toString();
     }
 
@@ -41,4 +54,19 @@ class NaiveCartImpl implements CartService {
                         .map(i -> i.getUnitPrice() * i.getQty()))
                 .reduce(0f, Float::sum);
     }
+
+    public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
+        Gauge.builder("cart_count", shoppingCarts,
+                b -> b.values().size()).register(meterRegistry);
+
+        Gauge.builder("cart_count", shoppingCarts,
+                        b -> b.values().stream()
+                                .flatMap(c -> c.getItems().stream()
+                                        .map(e -> e.getUnitPrice() * e.getQty()))
+                                .mapToDouble(Float::doubleValue)
+                                .sum())
+                .register(meterRegistry);
+
+    }
+
 }
