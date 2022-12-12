@@ -1,6 +1,5 @@
 package no.shoppifly;
 
-import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +36,6 @@ class NaiveCartImpl implements CartService, ApplicationListener<ApplicationReady
     }
 
     @Override
-    @Timed(value = "checkout_latency")
     public String checkout(Cart cart) {
         meterRegistry.counter("checkouts").increment();
         shoppingCarts.remove(cart.getId());
