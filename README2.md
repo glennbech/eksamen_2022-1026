@@ -115,7 +115,8 @@ og tror det derfor er grunn til å lage en bucket.
 # Egne tanker
 
 Fikk til en god del av oppgavene, men slet med å få terraform til å spille på lag. Vikk opp feilmeling om at det ikke fantes noen s3 bucket og derfor ville ikke workflowen gjennomføres.
-Dette var veldig irriterende å ikke få til, da jeg føler det har gått greit på øvinger. Til slutt fikk jeg det til ved å først manuelt gjennomføre en init, plan og apply. Men da fikk jeg jo samme problem som de hadde. At bucketen er allerede lagd.
+Dette var veldig irriterende å ikke få til, da jeg føler det har gått greit på øvinger. Til slutt fikk jeg det til ved å først manuelt gjennomføre en init, plan og apply.
+Men da fikk jeg jo samme problem som de hadde. At bucketen er allerede lagd.
 
 Brukte for mye tid på å få metrics til å fungere, og er ikke sikker på om jeg fikk "checkout_latency" til å fungere da det til tider tok lang tid før ny matrics
 ble synlig i CloudWatch, fikk derfor ikke dobbeltsjekket om den kom opp korrekt.
