@@ -7,8 +7,8 @@ terraform {
   }
   backend "s3" {
     bucket = "1026-terraform-state"
-    key = "1026/apprunner-actions.state"
-    region = "eu-north-1"
+    key = "1026/exam.state"
+    region = "eu-west-1"
   }
 
 }
