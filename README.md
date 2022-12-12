@@ -384,10 +384,10 @@ til å "mocke" micrometer fra enhetstestene, men det er ikke ønskelig at dere s
 
 Endre Javakoden slik at den rapporterer følgende Metrics til CloudWatch
 
-*[ ] "carts" -  Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.  
-*[ ] "cartsvalue" - Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
-*[ ] "checkouts" - Totalt antall  handlevogner er blitt sjekket ut
-*[ ] "checkout_latency" - Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
+*[x] "carts" -  Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.  
+*[x] "cartsvalue" - Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
+*[x] "checkouts" - Totalt antall  handlevogner er blitt sjekket ut
+*[x] "checkout_latency" - Gjennomsnittlig responstid for Checkout metoden i Controller-klassen.
 
 ## Del 5 - Terraform og CloudWatch Dashboards
 
@@ -406,21 +406,21 @@ De kommenterte derfor bare ut S3 bucket koden, og gikk videre til neste oppgave.
 
 Se på ```provider.tf filen```. 
 
-*[ ] Forklar med egne ord. Hva er årsaken til dette problemet? Hvorfor forsøker Terraform å opprette en bucket, når den allerede eksisterer? 
+*[x] Forklar med egne ord. Hva er årsaken til dette problemet? Hvorfor forsøker Terraform å opprette en bucket, når den allerede eksisterer? 
 *[ ] Gjør nødvendige Endre slik denne slik at Terraform kan kjøres flere ganger uten å forsøke å opprette ressurser hver gang den kjører.
 *[ ] Fjern kommentarene fra ```databacket.tf``` slik at Terraform-koden  også lager en S3 bucket. 
 
 ### Oppgave 2
 
-*[ ] Et annet problem er at "terraform apply" bare blir kjørt hver gang noen lager en Pull request. Vi ønsker bare å kjøre apply når
+*[x] Et annet problem er at "terraform apply" bare blir kjørt hver gang noen lager en Pull request. Vi ønsker bare å kjøre apply når
 noen gjør en push mot main branch. 
 
-*[ ] Fullfør workflow filen ```cloudwatch_dashboard.yml``` filen slik at apply bare bli kjørt på push mot main branch, og terraform plan   
+*[x] Fullfør workflow filen ```cloudwatch_dashboard.yml``` filen slik at apply bare bli kjørt på push mot main branch, og terraform plan   
 på når det lages en Pull request 
 
 ### Oppgave 3
 
-*[ ] Fullfør cloudwatch_dashboard.tf slik at koden lager et CloudWatch Dashboard med *fire widgets*. Disse skal vise metrikkene fra oppgave 2, Del 4. 
+*[x] Fullfør cloudwatch_dashboard.tf slik at koden lager et CloudWatch Dashboard med *fire widgets*. Disse skal vise metrikkene fra oppgave 2, Del 4. 
 *[ ] Antall handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
 *[ ] Total sum med penger i handlekurver på et gitt tidspunkt i tid - verdien kan gå opp og ned ettersom kunder sjekker ut handlekurver og nye blir laget.
 *[ ] Totalt antall  handlevogner er blitt "sjekket ut" per time
