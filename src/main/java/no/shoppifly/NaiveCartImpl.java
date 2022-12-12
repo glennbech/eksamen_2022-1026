@@ -59,7 +59,7 @@ class NaiveCartImpl implements CartService, ApplicationListener<ApplicationReady
         Gauge.builder("cart_count", shoppingCarts,
                 b -> b.values().size()).register(meterRegistry);
 
-        Gauge.builder("cart_count", shoppingCarts,
+        Gauge.builder("carts_value", shoppingCarts,
                         b -> b.values().stream()
                                 .flatMap(c -> c.getItems().stream()
                                         .map(e -> e.getUnitPrice() * e.getQty()))
